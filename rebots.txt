@@ -1,0 +1,10 @@
+#
+# robots.txt for Teroun
+#
+
+User-agent: *
+Disallow: /app/
+Disallow: /config/
+Disallow: /core/
+Disallow: /install/
+Disallow: /template/
