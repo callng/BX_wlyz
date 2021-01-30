@@ -1,0 +1,13 @@
+.layui-layer-title,
+.layui-layer-dialog .layui-layer-content {
+	font-size: 16px;
+}
+
+/*修复bootstarp冲突*/
+.layui-layer .layui-layer-btn0{
+	color: #fff !important;
+}
+.layui-layer-dialog{
+	box-sizing:content-box !important;
+	-webkit-box-sizing:content-box !important;
+}
