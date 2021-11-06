@@ -14,5 +14,5 @@
 
 默认账号密码：`admin`和`admin`
 
-后台地址：`域名/index.php/admin/Home/show`
-代理地址：`域名/index.php/agent/Home/show`
+后台地址：`域名/admin/Home/show`
+代理地址：`域名/agent/Home/show`
