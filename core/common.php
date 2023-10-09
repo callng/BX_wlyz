@@ -1,16 +1,18 @@
 <?php
+
 use core\lib\Config;
 use core\lib\Route;
+
 error_reporting(0);
 ini_set("display_errors", 0);
 header("Content-type: text/html;charset=utf-8");
 define("BX_ROOT", substr(dirname(__FILE__), 0, -4));
-define("DS", DIRECTORY_SEPARATOR);
+const DS = DIRECTORY_SEPARATOR;
 require_once BX_ROOT . "core/lib/Load.php";
 spl_autoload_register(["\\core\\lib\\Load", "autoload"]);
 require_once BX_ROOT . "core/function.inc.php";
 require_once BX_ROOT . "core/version.php";
-if (!get_magic_quotes_gpc()) {
+if (!ini_get("magic_quotes_gpc")) {
     if (!empty($_GET)) {
         $_GET = addslashes_deep($_GET);
     }
@@ -28,7 +30,7 @@ foreach ($bx_route_files as $i) {
 }
 Route::init();
 Route::load();
-//HTTP API
+
 function curl_get_contents($url, $timeout = 2){
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
@@ -38,4 +40,3 @@ function curl_get_contents($url, $timeout = 2){
     curl_close($ch);
     return $output;
 }
-?>
